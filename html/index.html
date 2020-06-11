@@ -1,32 +1,71 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <title>Estacinamento</title>
 </head>
 <body>
-    <h1>Estacionamento</h1>
+    <h1 class="bg-dark text-white p-2">Estacionamento</h1>
+        {alert}
+    <div class='container'>
+        <div class="row">
+            <div class="col-md-6">
+                <h4 class="text-center">Marcar entrada</h4>
+                <form action="marcarEntrada.php" method="POST">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Placa</label>
+                        <input type="text" class="form-control" name='placa' style = 'text-transform: uppercase'required>
+                        <small class="form-text text-muted">Coloque a placa do veículo</small>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Marcar entrada</button>
+                </form>
 
-    <div class="row">
-        <div>
-            <h4 class="text-center">Marcar entrada</h4>
-            <form action="salvar.php" method="POST">
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Placa</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    <small id="emailHelp" class="form-text text-muted">Coloque a placa do veículo</small>
-                  </div>
-                  <button type="submit" class="btn btn-primary">Marcar entrada</button>
-            </form>
+                <div class='mt-5'>
+                    <h6>Gerar Relatorio</h6>
+                    <form action="gerarRelatorio.php" method = 'get' >
+                        <input type="date" name='data_inicio' value=''>
+                        até
+                        <input type="date" name='data_fim' value=''>
+                        <button class ='btn btn-info'>Filtar</button>
+                    </form>
+                    <div class='card' style='width: 18rem;'>
+                        <div class="card-body">
+                            <h5 class="card-title">Usuários fidelidade</h5>
+                            <p class="card-text">
+                               {usuariosFidelidade}
+                            </p>
+                        </div>
+                        </div>  
+                </div>
+            </div>
+            <div class="col-md-6 mt-3">
+                <h4>Pátio <span class="badge badge-info">{lotacaopatio}</span></h4>
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th>Placa</th>
+                            <th>Data de entrada</th>
+                            <th>Estado</th>
+                            <th>Marcar saída</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {patioatual}
+                    </tbody>
+                </table>
+            </div>
         </div>
-        <div>
-
-        </div>
-
     </div>
-
-
+    <div class='bg-dark text-white p-5'>
+        <h6>Criado por Kevin Rodrigues - <a href="mailto:igantekevin@hotmail.com">igantekevin@hotmail.com</a></h6>
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />Este obra está licenciado com uma Licença <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Atribuição-NãoComercial-CompartilhaIgual 4.0 Internacional</a>.
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </body>
 </html>

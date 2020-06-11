@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Estacinamento</title>
+</head>
+<body>
+    <section class= 'container text-center align-middle'>
+        <h3 class="text-danger">{validadedocodigo}</h3>
+        <h6>{gratuidade}</h6>
+        <h3>O Tempo total foi de: <span class='text-info'> {dados_de_tempo}</span> minutos.<br></h3>
+        <h3>O valor total é de:<span class='badge text-success'>R${valor_total}</span></h3>
+
+        <div class="alert alert-{estadodopagamento}" role="alert">
+            {textoestadodopagamento}
+        </div>
+           
+        <a class='btn btn-dark mr-5' href='index.php'>Voltar ao menu</a>
+        {btndepagar}
+</section>
+</body>
+</html>

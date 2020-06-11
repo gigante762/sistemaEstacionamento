@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Estacinamento</title>
+</head>
+<body>
+    <div>
+        <nav class="navbar navbar-light bg-light sticky-top">
+            <a class="navbar-brand" href="index.php">Voltar ao menu</a>
+            <form action="" method = 'get'>
+                <input type="date" name='data_inicio' value='{data_inicio}'>
+                <input type="date" name='data_fim' value='{data_fim}'>
+                <button class ='btn btn-info'>Filtar</button>
+            </form>
+        </nav>
+    </div>
+<table class= 'table table-dark'>
+    <thead>
+        <th>Placa</th>
+        <th>Data enthada</th>
+        <th>Data saida</th>
+        <th>Estado</th>
+        <th> Valor total: R$ {valor_total_no_periodo}</th>
+    </thead>
+    <tbody>
+        {table}
+    </tbody>
+</table>
+</body>
+</html>
